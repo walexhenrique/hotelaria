@@ -1,0 +1,13 @@
+Error: Tentativa de login por objeto diferente de cliente
+Info: Cliente - Raimundo cadastrado com sucesso
+Info: Cliente - Breno cadastrado com sucesso
+Info: Raimundo realizou a reserva com sucesso para a data de 15/04/2022 e 16/04/2022
+para o quarto(luxo) de numero: 1, funcionario: Mauro
+Info: Breno realizou a reserva com sucesso para a data de 15/04/2022 e 16/04/2022
+para o quarto(luxo) de numero: 2, funcionario: Jorge
+Info: Cliente - Raimundo autenticado com sucesso
+Info: Cliente - Raimundo fez um servico pelo valor de R$20
+Info: Cliente - Raimundo desocupou o quarto de num 0 dele
+Info: Raimundo realizou a reserva com sucesso para a data de 18/04/2022 e 19/04/2022
+para o quarto(simples) de numero: 5, funcionario: Mauro
+Info: Cliente - Raimundo pagou um total de R$100 de diaria

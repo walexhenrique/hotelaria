@@ -17,6 +17,19 @@ class Quarto:
             }
         }
 
+    def fazer_manutencao(self):
+        self.itens = {
+            'refrigerante': {
+                'valor': 5,
+                'quantidade': 10
+            },
+            'cerveja': {
+                'valor': 3.45,
+                'quantidade': 20
+            }
+        }
+        print('Produtos reabastecidos')
+
     def _data_disponivel(self, data_inicial: datetime, data_final: datetime) -> bool:
 
         if data_inicial >= data_final:
@@ -30,7 +43,7 @@ class Quarto:
 
         return True
 
-    def reservar(self, data_inicial: str, data_final: str, cliente, funcionario=None) -> None:
+    def reservar(self, data_inicial: str, data_final: str, cliente, funcionario=None) -> bool:
 
         if not isinstance(data_inicial, str):
             raise TypeError('"data_inicial" precisa ser (str)')
@@ -46,13 +59,14 @@ class Quarto:
                     {'data_inicial': data_inicial_convertido, 'data_final': data_final_convertido, 'cliente': cliente,
                      'funcionario': funcionario}
                 )
-                # cliente.quartos_reservados.append(self)
+                cliente.quartos_reservados.append(self)
+
                 print(
                     f'Agendamento para o dia inicial: {data_inicial} com encerramento para o dia: {data_final} realizada com sucesso')
-            else:
-                print('Não foi possível realizar a reserva para esse dia')
+                return True
         except Exception as e:
             raise ValueError('Valor inválido para data')
+        return False
 
 
 class QuartoSimples(Quarto):
@@ -69,9 +83,3 @@ class QuartoCasal(Quarto):
 
 class QuartoLuxo(Quarto):
     valor_diaria = 300
-
-
-# q = Quarto(1)
-# q.agendamentos = [{'data_inicial': datetime.strptime('12/05/2022', '%d/%m/%Y').date(),
-#                    'data_final': datetime.strptime('16/05/2022', '%d/%m/%Y').date()}]
-# print(q.reservar('13/04/2022', '17/05/2022', 'jumento'))
